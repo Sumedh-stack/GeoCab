@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: UberBookingService
+  datasource:
+    url: jdbc:mysql://localhost:3306/QuickRide_db_local
+    username: root
+    password: 'Sumedh@123'
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  eureka:
+    client:
+      registerWithEureka: false
+      fetchRegistry: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: sample-group-2
+      auth-offset-reset: earliest
+
+server:
+  port: 8001
+

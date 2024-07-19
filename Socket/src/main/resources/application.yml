@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: SocketService
+  eureka:
+    client:
+      registerWithEureka: false
+      fetchRegistry: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: sample-group-1
+      auth-offset-reset: earliest
+
+server:
+  port: 3003
+
